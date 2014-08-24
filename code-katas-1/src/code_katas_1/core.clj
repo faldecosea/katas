@@ -1,5 +1,7 @@
 (ns code-katas-1.core)
 
+"estoy probando y corriendo todo en http://tryclj.com/ porque no me anda ni para atras bien en mi pc"
+
 (defn filter-odd
   "Escribir una funcion que retorne solamente los numeros impares de
    una secuencia"
@@ -11,7 +13,9 @@
   "Escribir una funcion que dada una clave y un mapa, devuelva true, solamente si el mapa
    contiene una entrada con esa clave, y su valor es nil"
   [k m]
+  "lo probe con esto (nil-key :a {:a nil, :b 2, :c 3}) "
   
+  (= (m k) nil)
   )
   
   
@@ -62,6 +66,7 @@
    solamente si alguno de los parametros son true, pero no todos son true. En otro
    caso debera retornar false"
   [& xs]
+  
   )
 
 (defn zip-map

@@ -18,12 +18,17 @@
   (= (m k) nil)
   )
   
-  
+ 
+
 
 (defn range
   "Escribir una funcion que cree una lista de enteros en un rango dado.
    Restricciones: range"
   [start end]
+  "el problema es que si deberia terminar en 10 toma 10 valores sumando de a uno, osea que si empieza desde otro numero q no sea 0 no sirve"
+  "probe con el take while antes del take, probe redifiniendo el end como      (= end (- end start)) y no me anda ni para atras "
+  ( take end (iterate (partial + 1 ) start))
+
   )
 
 (defn compress-sequence

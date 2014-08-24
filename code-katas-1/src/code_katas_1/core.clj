@@ -37,8 +37,9 @@
 (defn split-two
   "Escribir una funcion que parta una secuencia en dos partes
    Restricciones: split-at"
-  [length s]
-  )
+  [length s] 
+ 
+  (drop-last (/ length 2) s)  )
 
 (defn inter-two
   "Escribir una funcion que reciba dos secuencias y retorne el primero de cada una,

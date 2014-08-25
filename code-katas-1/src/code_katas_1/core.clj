@@ -35,6 +35,9 @@
   "Escribir una funcion que elimine los duplicados consecutivos
    de una secuencia"
   [s]
+  "la otra posibilidad era usar set, pero el problema ahi es que no mantenia el orden relativo de las letras, con distinct si."
+  "aun asi esta mal porque quita TODOS los repetidos y no los que son consecutivos.. tendria que buscar alguna otra alternativa."
+  (distinct s)
   )
 
 (defn max-value
@@ -74,6 +77,7 @@
    solamente si alguno de los parametros son true, pero no todos son true. En otro
    caso debera retornar false"
   [& xs]
+  
   
   )
 

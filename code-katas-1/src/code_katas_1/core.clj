@@ -41,7 +41,10 @@
   "Escribir una funcion que reciba un numero variable de parametros
    y retorne el que tenga el valor mayor
    Restricciones: max y max-key"
-  [& args])
+  [& args]
+  "si se ordena de menor a mayor y obtenemos el ultimo deberia darnos el mas alto, no es muy optimo pero funciona"
+  (take-last 1 (sort args)) 
+  )
 
 (defn split-two
   "Escribir una funcion que parta una secuencia en dos partes

@@ -78,8 +78,9 @@
    solamente si alguno de los parametros son true, pero no todos son true. En otro
    caso debera retornar false"
   [& xs]
-  
-  
+  "funciona pero con el detalle de que si son todos verdaderos sigue dando verdadero. habria que hacer una especie de condicion que 
+condicione que solo devuelva verdadero si encuentra alguna pero no todas."
+   (some true? xs) 
   )
 
 (defn zip-map

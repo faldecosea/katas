@@ -61,7 +61,8 @@
    luego el segundo de cada una, luego el tercero, etc.
    Restricciones: interleave"
   [s1 s2] 
-  
+  "tambien si lo que se quisiera hacer fuese construir un hashmap podria hacerse similarmente (zipmap s1 s2)"
+  (map vector s1 s2)
   )
 
 (defn retrieve-caps

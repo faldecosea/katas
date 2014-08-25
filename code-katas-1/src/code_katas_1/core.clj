@@ -88,4 +88,6 @@ condicione que solo devuelva verdadero si encuentra alguna pero no todas."
    construya un mapa a partir de ellos.
    Restricciones: zipmap"
   [k v]
+  (interleave k v)
+  
   )

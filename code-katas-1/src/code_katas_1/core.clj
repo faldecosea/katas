@@ -35,18 +35,18 @@
   "Escribir una funcion que elimine los duplicados consecutivos
    de una secuencia"
   [s]
-  "la otra posibilidad era usar set, pero el problema ahi es que no mantenia el orden relativo de las letras, con distinct si."
-  "aun asi esta mal porque quita TODOS los repetidos y no los que son consecutivos.. tendria que buscar alguna otra alternativa."
-  (distinct s)
-  )
-
+  (reduce #(if-not (= (last %1) %2)
+             (conj %1 %2)
+             %1)
+          []
+          s))
 (defn max-value
   "Escribir una funcion que reciba un numero variable de parametros
    y retorne el que tenga el valor mayor
    Restricciones: max y max-key"
   [& args]
   "si se ordena de menor a mayor y obtenemos el ultimo deberia darnos el mas alto, no es muy optimo pero funciona"
-  (take-last 1 (sort args)) 
+  (last (sort args)) 
   )
 
 (defn split-two

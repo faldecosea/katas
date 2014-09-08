@@ -61,17 +61,43 @@ como una especie de diccionario {1: 3 , 2: 3, 3:1} el uno aparece 3 veces entonc
 (for [x (secuencia) :when (complement(contains? actual x))] x)
 
 (+ (actual x) 1)
+
+(defn tartamudeo
+  [secuencia]
+  (def y 1)
+  (def iterador (first secuencia))
+  (for [x secuencia  :when (= iterador x)] (update-in y (inc y)))
+)
+
+
+(defn tartamudeo
+  [secuencia]
+  (def y 1)
+  (def iterador (first secuencia))
+  (for [x secuencia  :when (= iterador x)] (assoc y (y 1))
+)
+
+
 "
 
 (defn tartamudeo
   [secuencia]
-  (def cantidad 0)
+  (def actual [])
+  (def y (atom 0))
   (def iterador (first secuencia))
-  (for [x secuencia :when (= iterador x)] (inc(cantidad)))
+  (for [x secuencia  :when (= iterador x)] (if (= iterador x) (swap! y (partial + 1))))
+  (conj actual y iterador)
+  (def sec2 (drop y secuencia))
 )
 
 
   "
+(1:31 AM)
+no parece agarra la idea, mas que problemas de como pensarlo, 
+es de como codificarlo bien con el tema de la inmutabilidad, 
+y de no setear tan facilmente sobre un mismo valor otro, i++ , y otras complicaciones .
+
+-----------------
 la idea con la funcion que no pude implementar de arriba era recorrer la secuencia hasta que sea distinto
 y llevar un contador de las veces que aparecio ese numero, 
 luego agregar con conj al final de un array ejemplo [.... 3 1 ]
